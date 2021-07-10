@@ -5,17 +5,15 @@ import java.util.Scanner;
 
 public class calc {
 	int toatal;
-	String equal;
 	Scanner in = new Scanner(System.in);
 	
 	public calc() {
 		toatal = 0;
-		equal = "";
 	}
 	
 	public void action() {
 		try{
-			while(equal != "="){
+			while(true){
 				add(in.nextInt());			
 			}			
 		} catch (InputMismatchException e) {
