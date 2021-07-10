@@ -1,5 +1,6 @@
 package practice;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class calc {
@@ -13,16 +14,14 @@ public class calc {
 	}
 	
 	public void action() {
-		equal = in.nextLine();
-		while(equal != "="){
-			equal = in.nextLine();
-			if(equal != "=") {
-				add(in.nextInt());				
-			}
-		}
-		toatal();
+		try{
+			while(equal != "="){
+				add(in.nextInt());			
+			}			
+		} catch (InputMismatchException e) {
+			toatal();
+        }
 	}
-	
 	public void add(int number) {
 		toatal = number + toatal;
 	}
